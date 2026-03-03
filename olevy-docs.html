@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Olevy Docs — Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/olevy-docs.css">
+  </head>
+  <body class="bg-white text-dark">
+    <!-- Top purple banner (dismissible) -->
+    <div class="top-banner d-flex align-items-center justify-content-between px-3">
+      <div class="banner-text">🎉 New to Olevy? Explore how decentralized hiring and mentorship work together to help you source, verify, and grow Web3-ready talent. <a href="#" class="banner-link">Start here.</a></div>
+      <!-- <button class="banner-close" id="bannerClose">✕</button> -->
+    </div>
+    <!-- Header -->
+    <header class="sticky-top bg-black-custom text-white-custom px-2 px-md-4 py-2 py-md-3 rounded-bottom">
+      <div class="container-fluid d-flex align-items-center justify-content-between gap-2 gap-md-4">
+        <a href="#" id="brandToggle" class="d-flex align-items-center gap-2 text-decoration-none brand">
+          <img src="./img/logo-Olevy.png" alt="OLEVY logo" class="brand-logo">
+        </a>
+
+        <!-- Hamburger Menu Toggle (Mobile Only) -->
+        <button class="navbar-toggler d-md-none border-0" type="button" id="navbarToggle">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar-menu d-none d-md-flex align-items-center gap-4 flex-grow-1 justify-content-center">
+          <a href="/Contact-docs.html" class="text-decoration-none text-white">Get Started</a>
+          <a href="#" class="text-decoration-none text-white">Students</a>
+          <a href="#" class="text-decoration-none text-white">Employers</a>
+        </nav>
+
+        <div class="header-right d-none d-md-flex align-items-center gap-2 gap-md-3 ms-auto">
+          <a href="#" class="text-decoration-none text-white">Support</a>
+          <div class="position-relative">
+            <input type="text" class="form-control form-control-sm ps-3 " placeholder="Search" >
+            <i class="bi bi-search position-absolute" style="right:.75rem; top:50%; transform:translateY(-50%); color:#999;"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav class="mobile-menu d-md-none navbar-menu-mobile" id="mobileMenu" style="display: none;">
+        <a href="#" class="text-decoration-none text-white d-block py-2">Get Started</a>
+        <a href="#" class="text-decoration-none text-white d-block py-2">Students</a>
+        <a href="#" class="text-decoration-none text-white d-block py-2">Employers</a>
+        <a href="#" class="text-decoration-none text-white d-block py-2">Support</a>
+        <div class="position-relative py-2">
+          <input type="text" class="form-control form-control-sm ps-3" placeholder="Search" style="border-radius:50px; padding-right:2rem;">
+          <i class="bi bi-search position-absolute" style="right:.75rem; top:50%; transform:translateY(-50%); color:#999;"></i>
+        </div>
+      </nav>
+    </header>
+
+    <div class="d-flex">
+      <!-- Sidebar: always-open list with scrollable container -->
+      <aside class="border-end sidebar" style="width:14rem;">
+        <div class="p-3 mt-4">
+          <nav class="nav flex-column">
+            <!-- Overview group -->
+            <div class="sidebar-section mb-4">
+              <h6 class="text-uppercase fw-bold small mb-2">Overview</h6>
+                <ul class="list-unstyled ps-2 mb-0">
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="what-is-olevy">What is Olevy?</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="olevy-ecosystem">Olevy Ecosystem</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="events-workshops">Events &amp; Workshops</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="ecosystem">Ecosystem</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="hire-arc">Hire Arc Overview</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="community-collaboration">Community &amp; Collaboration</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="press-media">Press &amp; Media</a></li>
+                <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="changelog-updates">Changelog &amp; Updates</a></li>
+              </ul>
+            </div>
+
+            <!-- FAQ groups -->
+            <div class="sidebar-section mb-4">
+              <h6 class="text-uppercase fw-bold small mb-2">FAQs</h6>
+              <ul class="list-unstyled ps-2 mb-0">
+                <li>
+                  <strong>For Employers</strong>
+                  <ul class="list-unstyled ps-3 mb-2">
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="payments-verification">Payments &amp; Verification</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="hire-with-olevy">Hire with Olevy</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="submit-role">Submit a Role</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="partnerships">Partnerships &amp; Sponsorships</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="crypto-payments">Crypto Payments &amp; Invoicing</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="talent-guarantee">Talent Guarantee</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="success-stories">Success Stories</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>For Students</strong>
+                  <ul class="list-unstyled ps-3 mb-2">
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="join-mentorship">Join the Mentorship</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="learning-pathways">Learning Pathways</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="mentorship-guidelines">Mentorship Guidelines</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="digital-identity">Build Your Digital Identity</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="events-hackathons">Events &amp; Hackathons</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="student-faq">Student FAQ</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>For Mentors</strong>
+                  <ul class="list-unstyled ps-3 mb-0">
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="become-mentor">Become a Mentor</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="mentor-expectations">Expectations &amp; Rewards</a></li>
+                    <li><a href="#" class="nav-link p-0 sidebar-link sidebar-child" data-section="mentor-resources">Mentor Resources</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <main class="flex-grow-1">
+        <div class="container-lg px-3 px-md-4 py-4 py-md-5" style="max-width:56rem;">
+          <div class="d-flex align-items-center gap-2 mb-4 mb-md-5 small text-muted">
+            <a href="#" class="text-decoration-none text-muted me-1" aria-label="Home"><i class="bi bi-house-door-fill"></i></a>
+            <a href="#" class="text-decoration-none text-muted">Overview</a>
+            <span>/</span>
+            <span id="breadcrumb-section">Overview</span>
+          </div>
+
+          <h1 class="fw-bold mb-4 mb-md-5" id="content-title" style="font-size:2rem;">Overview</h1>
+
+          <div id="dynamic-content">
+            <!-- Default content -->
+            <div class="mb-4 mb-md-5">
+              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+              <p style="font-size:1rem; color:#333; line-height:1.6;">Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+            </div>
+
+            <div class="mb-4 mb-md-5">
+              <h2 class="fw-bold mb-3 mb-md-4" style="font-size:1.5rem;">Security for all</h2>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;">Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+              <p class="mb-4 mb-md-5" style="font-size:1rem; color:#333; line-height:1.6;">Lorem Ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+
+              <div class="d-flex align-items-center justify-content-center py-4 py-md-5">
+                <div class="text-end">
+                  <div class="text-muted small text-uppercase" style="letter-spacing:.05em; margin-bottom:.5rem;">Next</div>
+                  <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" style="color:#a855f7; font-size:1.125rem; font-weight:500;">
+                    Connect to Linea <i class="bi bi-arrow-right" style="font-size:1rem;"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+    <script>
+      // Sidebar toggle for small screens
+      (function() {
+        const sidebar = document.querySelector('.sidebar');
+        const brand = document.getElementById('brandToggle');
+        if (!sidebar || !brand) return;
+
+        function toggleSidebar() {
+          sidebar.classList.toggle('open');
+        }
+
+        brand.addEventListener('click', function(e) {
+          // only toggle on narrow viewports
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            toggleSidebar();
+          }
+        });
+
+        // Optional: close when clicking outside sidebar
+        document.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
+            if (!sidebar.contains(e.target) && e.target !== brand && !brand.contains(e.target)) {
+              sidebar.classList.remove('open');
+            }
+          }
+        });
+      })();
+    </script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light border-top pt-4 pt-md-5 pb-3 mt-auto" style="border-color:#ddd;">
+      <div class="container-lg px-3 px-md-4">
+        <div class="row g-3 g-md-5 mb-4 mb-md-5">
+          <div class="col-6 col-md-3">
+            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">ABOUT</h3>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">ABOUT OLEVY</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">GET STARTED</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">DOCUMENTARY</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">RECRUITMENT LIFECYCLE</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">EXPLORE</h3>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">BLOG</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">COMMUNITY FORUM</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">EVENTS</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">EMERGENCY HIRE</h3>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">GET ACCESS</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">COFFEE CHAT</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3">
+            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">RESOURCES</h3>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">HELP CENTER</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">BRAND ASSETS</a></li>
+              <li class="mb-3 d-flex gap-2">
+                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-newspaper"></i></a>
+                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-youtube"></i></a>
+              </li>
+              <li class="d-flex gap-2">
+                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-discord"></i></a>
+                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-top pt-3 pt-md-4" style="border-color:#ddd;">
+          <!-- <div class="footer-art-wrap mb-3">
+            <img src="./img/tempImageuhaO3F 1.png" alt="OLEVY art" class="footer-art">
+          </div> -->
+          <div style="font-size:1.875rem; font-weight:900; color:#000; opacity:.2;" class="footer-logo">OLEVY</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal: Join mailing list (shows on every page load) -->
+    <div id="joinModal" class="olevy-modal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+      <div class="olevy-modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close popup">×</button>
+        <h3 id="joinModalTitle">Join our mailing list.</h3>
+        <p class="small text-muted">Receive our monthly newsletter with curated happenings from our local ecosystem.</p>
+        <div class="modal-form d-flex gap-2 align-items-center">
+          <input type="email" id="modalEmail" placeholder="Email Address" class="form-control form-control-sm" />
+          <button id="modalSubscribe" class="btn btn-dark btn-sm">Subscribe</button>
+        </div>
+        <div class="small text-muted mt-2">We respect your privacy.</div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // Content data for different sections
+      const sectionContent = {
+        'what-is-olevy': {
+          title: 'What is Olevy?',
+          breadcrumb: 'What is Olevy?',
+          content: `
+            <div class="mb-4 mb-md-5">
+              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Olevy is a comprehensive platform designed to connect students with employers and streamline the entire recruitment lifecycle. Our mission is to make talent acquisition and career development accessible to everyone.</p>
+              <p style="font-size:1rem; color:#333; line-height:1.6;">We provide tools and resources that empower students to discover opportunities and help employers find the right talent efficiently.</p>
+            </div>
+            <div class="mb-4 mb-md-5">
+              <h2 class="fw-bold mb-3 mb-md-4" style="font-size:1.5rem;">Key Features</h2>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Talent Matching:</strong> Advanced algorithms to match students with employers</p>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Portfolio Building:</strong> Showcase your skills and experience</p>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Real-time Opportunities:</strong> Get notified about new job openings</p>
+              <p class="mb-4 mb-md-5" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Network Building:</strong> Connect with peers and professionals</p>
+            </div>
+          `
+        },
+        'olevy-ecosystem': {
+          title: 'Olevy Ecosystem',
+          breadcrumb: 'Olevy Ecosystem',
+          content: `
+            <div class="mb-4 mb-md-5">
+              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">The Olevy Ecosystem encompasses multiple interconnected platforms and services designed to support all participants in the talent marketplace.</p>
+            </div>
+            <div class="mb-4 mb-md-5">
+              <h2 class="fw-bold mb-3 mb-md-4" style="font-size:1.5rem;">Ecosystem Components</h2>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Student Platform:</strong> Career exploration and job search tools</p>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Employer Portal:</strong> Recruitment management system</p>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Analytics Dashboard:</strong> Data-driven insights for hiring</p>
+              <p class="mb-4 mb-md-5" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Community Forum:</strong> Peer-to-peer learning and support</p>
+            </div>
+          `
+        },
+        'core-principles': {
+          title: 'Core Principles',
+          breadcrumb: 'Core Principles',
+          content: `
+            <div class="mb-4 mb-md-5">
+              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Our core principles guide every decision we make at Olevy.</p>
+            </div>
+            <div class="mb-4 mb-md-5">
+              <h2 class="fw-bold mb-3 mb-md-4" style="font-size:1.5rem;">Principles</h2>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Accessibility:</strong> Making opportunities available to everyone</p>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Transparency:</strong> Clear and honest communication</p>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Innovation:</strong> Constantly improving our platform</p>
+              <p class="mb-4 mb-md-5" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Security:</strong> Protecting user data and privacy</p>
+            </div>
+          `
+        },
+        'ecosystem': {
+          title: 'Ecosystem',
+          breadcrumb: 'Ecosystem',
+          content: `
+            <div class="mb-4 mb-md-5">
+              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Our comprehensive ecosystem brings together all the necessary tools and resources for career success.</p>
+              <p style="font-size:1rem; color:#333; line-height:1.6;">From student onboarding to employer recruitment, every step is optimized and integrated seamlessly.</p>
+            </div>
+            <div class="mb-4 mb-md-5">
+              <h2 class="fw-bold mb-3 mb-md-4" style="font-size:1.5rem;">How It Works</h2>
+              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;">Students create profiles, explore opportunities, and apply to positions matching their skills and interests. Employers post jobs, review applications, and find top talent. Our platform facilitates connections that lead to successful career placements.</p>
+            </div>
+          `
+        }
+        ,
+        'events-workshops': {
+          title: 'Events & Workshops',
+          breadcrumb: 'Events & Workshops',
+          content: `
+            <div class="mb-4 mb-md-5">
+              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Olevy regularly hosts virtual and in-person events, hackathons, and skill‑building workshops that bring together students, employers, and mentors.</p>
+            </div>
+          `
+        },
+        'hire-arc': {
+          title: 'Hire Arc Overview',
+          breadcrumb: 'Hire Arc Overview',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">The Hire Arc is our end‑to‑end recruitment solution for employers. It guides candidates through each phase from application to onboarding.</p>`
+        },
+        'community-collaboration': {
+          title: 'Community & Collaboration',
+          breadcrumb: 'Community & Collaboration',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Collaboration spaces, discussion forums, and study groups help members of the Olevy ecosystem learn from one another and grow their networks.</p>`
+        },
+        'press-media': {
+          title: 'Press & Media',
+          breadcrumb: 'Press & Media',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Read the latest news, announcements, and media coverage about Olevy. Our press kit is available for downloads.</p>`
+        },
+        'changelog-updates': {
+          title: 'Changelog & Updates',
+          breadcrumb: 'Changelog & Updates',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Check this section for release notes, feature rollouts, and product roadmap updates.</p>`
+        },
+        // placeholder content entries for FAQ sub‑sections (employers, students, mentors)
+        'payments-verification': {
+          title: 'Payments & Verification',
+          breadcrumb: 'Payments & Verification',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Information about employer payments, invoicing, and verification procedures.</p>`
+        },
+        'hire-with-olevy': {
+          title: 'Hire with Olevy',
+          breadcrumb: 'Hire with Olevy',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Guidelines on how to post jobs and source talent through the Olevy platform.</p>`
+        },
+        'submit-role': {
+          title: 'Submit a Role',
+          breadcrumb: 'Submit a Role',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Steps for submitting open positions and tracking applications.</p>`
+        },
+        'partnerships': {
+          title: 'Partnerships & Sponsorships',
+          breadcrumb: 'Partnerships & Sponsorships',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Learn about collaborating with Olevy through strategic partnerships or sponsorship opportunities.</p>`
+        },
+        'crypto-payments': {
+          title: 'Crypto Payments & Invoicing',
+          breadcrumb: 'Crypto Payments & Invoicing',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Details on accepting and sending crypto payments within the ecosystem.</p>`
+        },
+        'talent-guarantee': {
+          title: 'Talent Guarantee',
+          breadcrumb: 'Talent Guarantee',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Our promise to employers regarding candidate quality and support.</p>`
+        },
+        'success-stories': {
+          title: 'Success Stories',
+          breadcrumb: 'Success Stories',
+          content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Read about companies and students who found success through Olevy.</p>`
+        },
+        'join-mentorship': {
+          title: 'Join the Mentorship',
+          breadcrumb: 'Join the Mentorship',
+          content: `<p class="mb-4">Steps to enrol in the student mentorship programme.</p>`
+        },
+        'learning-pathways': {
+          title: 'Learning Pathways',
+          breadcrumb: 'Learning Pathways',
+          content: `<p class="mb-4">Overview of structured study tracks available to students.</p>`
+        },
+        'mentorship-guidelines': {
+          title: 'Mentorship Guidelines',
+          breadcrumb: 'Mentorship Guidelines',
+          content: `<p class="mb-4">Rules and best practices for mentors and mentees.</p>`
+        },
+        'digital-identity': {
+          title: 'Build Your Digital Identity',
+          breadcrumb: 'Build Your Digital Identity',
+          content: `<p class="mb-4">Tips for creating a strong profile and portfolio.</p>`
+        },
+        'events-hackathons': {
+          title: 'Events & Hackathons',
+          breadcrumb: 'Events & Hackathons',
+          content: `<p class="mb-4">Information on upcoming student events and competitions.</p>`
+        },
+        'student-faq': {
+          title: 'Student FAQ',
+          breadcrumb: 'Student FAQ',
+          content: `<p class="mb-4">Frequently asked questions by students.</p>`
+        },
+        'become-mentor': {
+          title: 'Become a Mentor',
+          breadcrumb: 'Become a Mentor',
+          content: `<p class="mb-4">How to sign up and start mentoring.</p>`
+        },
+        'mentor-expectations': {
+          title: 'Expectations & Rewards',
+          breadcrumb: 'Expectations & Rewards',
+          content: `<p class="mb-4">What we expect from mentors and how they benefit.</p>`
+        },
+        'mentor-resources': {
+          title: 'Mentor Resources',
+          breadcrumb: 'Mentor Resources',
+          content: `<p class="mb-4">Documents, templates and guidance for mentors.</p>`
+        }
+      };
+
+      // Handle hamburger menu toggle
+      document.getElementById('navbarToggle').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+      });
+
+      // Close mobile menu when a link is clicked
+      const navLinks = document.querySelectorAll('.navbar-menu-mobile a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          document.getElementById('mobileMenu').style.display = 'none';
+        });
+      });
+
+      // Handle sidebar link clicks
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const section = this.getAttribute('data-section');
+          const data = sectionContent[section];
+          
+          if (data) {
+            const contentDiv = document.getElementById('dynamic-content');
+            contentDiv.innerHTML = data.content;
+            document.getElementById('content-title').textContent = data.title;
+            document.getElementById('breadcrumb-section').textContent = data.breadcrumb;
+          }
+        });
+      });
+
+      // Modal & banner behavior
+      (function(){
+        const joinModal = document.getElementById('joinModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalSubscribe = document.getElementById('modalSubscribe');
+        const bannerClose = document.getElementById('bannerClose');
+
+        function showModal(){ if(joinModal) { joinModal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } }
+        function hideModal(){ if(joinModal) { joinModal.style.display = 'none'; document.body.style.overflow = 'auto'; } }
+
+        // show modal on every page load (refresh)
+        // debugger
+        window.addEventListener('load', function(){ setTimeout(showModal, 450); });
+
+        if(modalClose) modalClose.addEventListener('click', hideModal);
+
+        if(modalSubscribe) {
+          modalSubscribe.addEventListener('click', function(){
+            const emailField = document.getElementById('modalEmail');
+            const email = emailField ? emailField.value.trim() : '';
+            if(email){
+              modalSubscribe.textContent = 'Thanks!';
+              setTimeout(hideModal, 800);
+            } else if(emailField){
+              emailField.focus();
+            }
+          });
+        }
+
+        // close when clicking backdrop
+        if(joinModal){
+          joinModal.addEventListener('click', function(e){ if(e.target === joinModal) hideModal(); });
+        }
+
+        // if(bannerClose){ bannerClose.addEventListener('click', function(){ const b = document.querySelector('.top-banner'); if(b) b.style.display='none'; }); }
+      })();
+    </script>
+  </body>
+</html>
