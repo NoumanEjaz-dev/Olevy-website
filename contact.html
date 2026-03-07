@@ -4,22 +4,8 @@
     <title>Olevy Contact</title>
     <link href="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="./contact.css">
-    <style>
-     
-    </style>
   </head>
   <body>
-
-    <!-- ── Top Banner ───────────────────────────────── -->
-    <!-- <div class="top-banner" id="topBanner">
-      <span class="banner-text">
-        🚀 Olevy Network is now open for early access.
-        <a href="#" class="banner-link">Learn more →</a>
-      </span>
-      <button class="banner-close" id="bannerClose" aria-label="Close banner">×</button>
-    </div> -->
-
-    <!-- ── Header ───────────────────────────────────── -->
     <div class="header-rounded">
       <a href="index.html" class="logo text-decoration-none" style="color:inherit">OLEVY</a>
       <nav>
@@ -205,19 +191,6 @@
           subBtn.textContent = '✓ Subscribed!';
           subBtn.style.background = '#22c55e';
           setTimeout(closeModal, 1200);
-        });
-      })();
-
-      // ── Top Banner dismiss ─────────────────────────
-      (function () {
-        const banner   = document.getElementById('topBanner');
-        const closeBtn = document.getElementById('bannerClose');
-        if (sessionStorage.getItem('olevyBannerDismissed')) {
-          banner.style.display = 'none';
-        }
-        closeBtn.addEventListener('click', function () {
-          banner.style.display = 'none';
-          sessionStorage.setItem('olevyBannerDismissed', 'true');
         });
       })();
     </script>

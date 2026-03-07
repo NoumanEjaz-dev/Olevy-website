@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="./styles.css">
     
   </head>
-  <body class=" text-dark  ">
-    <!-- Top purple banner (dismissible) -->
+  <body class="text-dark">
     <div class="top-banner d-flex align-items-center justify-content-between px-3">
       <div class="banner-text">🎉 New to Olevy? Explore how decentralized hiring and mentorship work together to help you source, verify, and grow Web3-ready talent. <a href="#" class="banner-link">Start here.</a></div>
-      <!-- <button class="banner-close" id="bannerClose">✕</button> -->
     </div>
     <!-- Header -->
     <header class="sticky-top bg-black-custom text-white-custom px-2 px-md-4 py-2 py-md-3 rounded-bottom">
@@ -44,7 +42,7 @@
 
       <!-- Mobile Menu -->
       <nav class="mobile-menu d-md-none navbar-menu-mobile" id="mobileMenu" style="display: none;">
-        <a href="#" class="text-decoration-none text-white d-block py-2">Get Started</a>
+        <a href="contact.html" class="text-decoration-none text-white d-block py-2">Get Started</a>
         <a href="#" class="text-decoration-none text-white d-block py-2">Students</a>
         <a href="#" class="text-decoration-none text-white d-block py-2">Employers</a>
         <a href="#" class="text-decoration-none text-white d-block py-2">Support</a>
@@ -230,9 +228,6 @@
           </div>
         </div>
         <div class="border-top pt-3 pt-md-4" style="border-color:#ddd;">
-          <!-- <div class="footer-art-wrap mb-3">
-            <img src="./img/tempImageuhaO3F 1.png" alt="OLEVY art" class="footer-art">
-          </div> -->
           <div style="font-size:1.875rem; font-weight:900; color:#000; opacity:.2;" class="footer-logo">OLEVY</div>
         </div>
       </div>
@@ -253,7 +248,6 @@
     </div>
 
 <script src="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.js"></script>
-    
     <script>
       // Content data for different sections
       const sectionContent = {
@@ -290,22 +284,6 @@
             </div>
           `
         },
-        'core-principles': {
-          title: 'Core Principles',
-          breadcrumb: 'Core Principles',
-          content: `
-            <div class="mb-4 mb-md-5">
-              <p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Our core principles guide every decision we make at Olevy.</p>
-            </div>
-            <div class="mb-4 mb-md-5">
-              <h2 class="fw-bold mb-3 mb-md-4" style="font-size:1.5rem;">Principles</h2>
-              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Accessibility:</strong> Making opportunities available to everyone</p>
-              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Transparency:</strong> Clear and honest communication</p>
-              <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Innovation:</strong> Constantly improving our platform</p>
-              <p class="mb-4 mb-md-5" style="font-size:1rem; color:#333; line-height:1.6;"><strong>• Security:</strong> Protecting user data and privacy</p>
-            </div>
-          `
-        },
         'ecosystem': {
           title: 'Ecosystem',
           breadcrumb: 'Ecosystem',
@@ -319,8 +297,7 @@
               <p class="mb-2 mb-md-3" style="font-size:1rem; color:#333; line-height:1.6;">Students create profiles, explore opportunities, and apply to positions matching their skills and interests. Employers post jobs, review applications, and find top talent. Our platform facilitates connections that lead to successful career placements.</p>
             </div>
           `
-        }
-        ,
+        },
         'events-workshops': {
           title: 'Events & Workshops',
           breadcrumb: 'Events & Workshops',
@@ -350,7 +327,6 @@
           breadcrumb: 'Changelog & Updates',
           content: `<p class="mb-4" style="font-size:1rem; color:#333; line-height:1.6;">Check this section for release notes, feature rollouts, and product roadmap updates.</p>`
         },
-        // placeholder content entries for FAQ sub‑sections (employers, students, mentors)
         'payments-verification': {
           title: 'Payments & Verification',
           breadcrumb: 'Payments & Verification',
@@ -468,7 +444,6 @@
         const joinModal = document.getElementById('joinModal');
         const modalClose = document.getElementById('modalClose');
         const modalSubscribe = document.getElementById('modalSubscribe');
-        const bannerClose = document.getElementById('bannerClose');
 
         function showModal(){
           if(joinModal) {
@@ -513,8 +488,6 @@
         if(joinModal){
           joinModal.addEventListener('click', function(e){ if(e.target === joinModal) hideModal(); });
         }
-
-        // if(bannerClose){ bannerClose.addEventListener('click', function(){ const b = document.querySelector('.top-banner'); if(b) b.style.display='none'; }); }
       })();
     </script>
   </body>

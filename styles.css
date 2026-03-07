@@ -1,7 +1,3 @@
-/* Bootstrap-based Olevy Docs custom styles */
-/* Google Fonts - loaded via HTML link tag for better offline handling */
-/* Fallback stack if Inter isn't available */
-
 :root {
   --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
@@ -17,22 +13,19 @@ body {
 }
 .text-white-custom { color: #fff !important; }
 .rounded-bottom { border-bottom-left-radius: .5rem; border-bottom-right-radius: .5rem; }
-
-.brand .logo-text { color: #fff; }
-
+.sticky-top{
+  z-index: 1;
+}
 .sidebar { 
   background-color: #fff; 
   border-color: #ddd; 
   padding-bottom: 2rem; 
-  /* margin-top: 4rem;  */
-  overflow-y: auto; /* vertical scrolling */
-  scrollbar-width: thin; /* Firefox thin scrollbar */
-  scrollbar-color: #888 #f1f1f1; /* thumb and track colors for Firefox */
-  /* keep sidebar full height minus header */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
   height: calc(100vh - 4.5rem);
 }
 
-/* WebKit scrollbar styles for a sleek professional look */
 .sidebar::-webkit-scrollbar {
   width: 8px;
 }
@@ -47,37 +40,13 @@ body {
 .sidebar::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
-.sidebar .accordion-button { color: #444; font-size: .95rem; }
 .sidebar-child { font-size: .75rem; color: #666; display: block; padding: .25rem 0; }
 .sidebar-child:hover { color: #000; }
 .navbar-menu{white-space: nowrap;}
-
-/* Footer small tweaks */
-.footer { background: transparent; }
-.footer .footer-title { font-size: 1.125rem; }
-
-/* Utility overrides matching the React version */
-.text-muted.small { font-size: .75rem; };
-
-.search-field{
-  border-radius: 50px;
-  /* width: 17rem; */
-  padding-right: 2rem;
-  background-color: yellow;
-}
-
-
-@media (max-width: 880px) {
-  .search-field{
-    width: 11rem;
-    background-color: red;
-  }
-}
-
+.text-muted.small { font-size: .75rem; }
 
 @media (max-width: 767.98px) {
   .sidebar {
-    /* start hidden on mobile, slide over content when opened */
     position: fixed;
     left: -100%;
     top: 4.5rem;
@@ -98,7 +67,7 @@ body {
   main {
     opacity: 1;
     position: relative;
-    margin-left: 0; /* don't reserve space for hidden sidebar */
+    margin-left: 0;
   }
 }
 
@@ -114,9 +83,8 @@ body {
 }
 
 .brand-logo {
- width: 120px;
-    height: 50px;
-
+  width: 120px;
+  height: 50px;
   object-fit: contain;
   display: inline-block;
 }
@@ -124,11 +92,10 @@ body {
 @media (min-width: 768px) {
   .brand-logo {
     width: 156px;
-        height: 44px;
+    height: 44px;
   }
 }
 
-/* Hamburger Menu Styles */
 .navbar-toggler {
   width: 50px;
   height: 40px;
@@ -174,7 +141,7 @@ body {
   }
   
   .brand-logo {
-    width: 50px;
+    /* width: 50px; */
     height: 30px;
   }
   
@@ -188,7 +155,7 @@ body {
   }
   
   main {
-    margin-left: 12rem;
+    /* margin-left: 12rem; */
   }
   
   .sidebar {
@@ -208,381 +175,7 @@ body {
 padding: 10px;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------ */
-/*--------------------------------------------------- contact page style *---------------------------------------------/
-/*------------------------------------------------------------------------------------------------------------------  */
-
-   body {
-        background-color: #f5f5f5;
-      }
-
-      /* Header Styling */
-      .header-rounded {
-        background-color: #000;
-        color: #fff;
-        border-radius: 50px;
-        padding: 15px 40px;
-        margin: 20px auto;
-        max-width: 1200px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-      }
-
-      .header-rounded .logo {
-        font-size: 1.3rem;
-        font-weight: 900;
-        white-space: nowrap;
-      }
-
-      .header-rounded nav {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-      }
-
-      .header-rounded nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 0.95rem;
-        transition: opacity 0.3s;
-      }
-
-      .header-rounded nav a:hover {
-        opacity: 0.7;
-      }
-
-      @media (max-width: 768px) {
-        .header-rounded {
-          /* flex-direction: column; */
-          /* gap: 20px; */
-          padding: 15px 20px;
-          border-radius: 30px;
-          margin: 15px;
-        }
-
-        .header-rounded nav {
-          gap: 20px;
-          font-size: 0.85rem;
-        }
-      }
-
-      /* Contact Container */
-      .contact-container {
-        background: #fff;
-        border: none;
-        box-shadow: 0 1px 6px rgba(0,0,0,0.06);
-        border-radius: 12px;
-        padding: 50px;
-        margin: 30px auto;
-        max-width: 1200px;
-      }
-
-      .contact-wrapper {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 60px;
-        align-items: flex-start;
-      }
-
-      .contact-left {
-        max-width: 300px;
-      }
-
-      .contact-left h1 {
-        font-size: 2.8rem;
-        font-weight: 900;
-        margin-bottom: 20px;
-        color: #000;
-        line-height: 1.1;
-      }
-
-      .contact-left p {
-        font-size: 0.9rem;
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 0;
-      }
-
-      .contact-right {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-        flex: 1;
-      }
-
-      /* Form Row */
-      .form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-      }
-
-      .form-row.full {
-        grid-template-columns: 1fr;
-      }
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .form-input {
-        background-color: #f5f5f5;
-        border: none;
-        border-radius: 6px;
-        padding: 13px 16px;
-        font-size: 0.9rem;
-        color: #333;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
-      }
-
-      .form-input::placeholder {
-        color: #999;
-      }
-
-      .form-input:focus {
-        outline: none;
-        background-color: #ececec;
-      }
-
-      .form-select {
-        width: 100%;
-        background-color: #f5f5f5;
-        border: none;
-        border-radius: 6px; 
-        padding: 13px 16px;
-        font-size: 0.9rem;
-        color: #333;
-        cursor: pointer;
-        appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23999' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        padding-right: 40px;
-      }
-
-      .form-select:focus {
-        outline: none;
-        background-color: #ececec;
-      }
-
-      textarea.form-input {
-        resize: vertical;
-        min-height: 130px;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
-      }
-
-      .btn-submit {
-        background-color: #1a1a1a;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        padding: 12px 35px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        align-self: flex-start;
-        margin-top: 10px;
-      }
-
-      .btn-submit:hover {
-        background-color: #333;
-      }
-
-      .form-note {
-        font-size: 0.8rem;
-        color: #666;
-        line-height: 1.6;
-        margin-top: 20px;
-      }
-
-      .form-note a {
-        color: #0099ff;
-        text-decoration: none;
-      }
-
-      .form-note a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 1024px) {
-        .contact-wrapper {
-          grid-template-columns: 1fr;
-          gap: 40px;
-        }
-
-        .contact-left {
-          max-width: 100%;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .contact-container {
-          padding: 30px;
-          margin: 20px;
-        }
-
-        .contact-left h1 {
-          font-size: 2rem;
-        }
-
-        .form-row {
-          grid-template-columns: 1fr;
-          gap: 15px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .contact-container {
-          padding: 20px;
-          border-width: 2px;
-        }
-
-        .contact-left h1 {
-          font-size: 1.8rem;
-        }
-
-        .form-input,
-        .form-select {
-          padding: 10px 12px;
-          font-size: 0.85rem;
-        }
-      }
-
-      /* Image Section */
-      .image-section {
-        /* background: linear-gradient(135deg, #1a1a1a 0%, #000 100%); */
-        border-radius: 20px;
-        padding-top: 50px;
-        text-align: center;
-        margin: 30px auto;
-        max-width: 1200px;
-        overflow: hidden;
-      }
-
-      .image-section img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 30px;
-      }
-
-      .join-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #ffd700;
-        color: #000;
-        border: none;
-        border-radius: 50px;
-        padding: 14px 32px;
-        font-size: 0.95rem;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-        cursor: pointer;
-        display: inline-block;
-        transition: background-color 0.3s, transform 0.12s;
-        white-space: nowrap;
-        box-sizing: border-box;
-        z-index: 2;
-        margin-top: -45px;
-        position: relative;
-        box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
-      }
-
-      .join-button:hover {
-        background-color: #ffed4e;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(255, 215, 0, 0.4);
-      }
-
-      .join-button:active {
-        transform: translateY(0);
-      }
-
-      @media (max-width: 768px) {
-        .image-section {
-          padding: 40px 20px;
-        }
-
-        .join-button {
-          padding: 12px 28px;
-          font-size: 0.9rem;
-          margin-top: -35px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .join-button {
-          padding: 10px 20px;
-          font-size: 0.8rem;
-          margin-top: -30px;
-          letter-spacing: 0.3px;
-        }
-      }
-
-      @media (max-width: 360px) {
-        .join-button {
-          padding: 9px 16px;
-          font-size: 0.75rem;
-          margin-top: -25px;
-        }
-      }
-
-      /* Footer */
-      footer {
-        background-color: #f9f9f9;
-        border-top: 1px solid #ddd;
-        padding: 40px 20px 20px;
-        margin-top: 60px;
-      }
-
-      footer h3 {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-      }
-
-      footer a {
-        font-size: 0.85rem;
-        color: #333;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        color: #0099ff;
-      }
-
-      footer ul li {
-        margin-bottom: 10px;
-      }
-
-      .footer-logo {
-        font-size: 1.875rem;
-        font-weight: 900;
-        color: #000;
-        opacity: 0.2;
-        margin-top: 20px;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 12px;
-      }
-
-      .social-icons a {
-        font-size: 1rem;
-        color: #333;
-      }
-
-      /* Top banner */
+/* Top banner (index page) */
       .top-banner{
         background: linear-gradient(90deg,#7c3aed,#9f7aea);
         color:#fff;
@@ -609,7 +202,6 @@ padding: 10px;
         background:#fff;
         border-radius:8px;
         max-width:680px;
-        /* width:100%; */
         padding:1.5rem;
         box-shadow:0 8px 30px rgba(0,0,0,0.2);
         position:relative;
@@ -620,17 +212,12 @@ padding: 10px;
       .olevy-modal .modal-close{position:absolute;right:.6rem;top:.4rem;border:0;background:transparent;font-size:1.25rem}
       .olevy-modal .modal-form{margin-top:.5rem}
 
-      /* Footer art responsive */
-      .footer-art-wrap{display:flex;justify-content:center;align-items:center}
-      .footer-art{width:100%;height:auto;max-height:220px;object-fit:contain;opacity:0.18}
-
       @media (max-width:768px){
-        .footer-art{max-height:140px;opacity:0.28}
         .olevy-modal-content{max-width:92%;padding:1rem}
         .top-banner .banner-text{font-size:0.9rem}
       }
 
       @media (max-width:420px){
         .top-banner .banner-text{font-size:0.82rem}
-        .brand-logo{width:44px;height:28px}
+        /* .brand-logo{width:44px;height:28px} */
       }
