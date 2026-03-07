@@ -1,5 +1,6 @@
 /* Bootstrap-based Olevy Docs custom styles */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+/* Google Fonts - loaded via HTML link tag for better offline handling */
+/* Fallback stack if Inter isn't available */
 
 :root {
   --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
