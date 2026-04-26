@@ -2,17 +2,25 @@
   --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
+.footer-logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background-color: #fff;
   color: #111;
+  margin: 0 8px 8px 8px;
 }
 
 .bg-black-custom {
   background-color: #000 !important;
 }
 .text-white-custom { color: #fff !important; }
-.rounded-bottom { border-bottom-left-radius: .5rem; border-bottom-right-radius: .5rem; }
+.nav-rounded-all { border-radius: 18px; }
 .sticky-top{
   z-index: 1;
 }
@@ -141,7 +149,6 @@ body {
   }
   
   .brand-logo {
-    /* width: 50px; */
     height: 30px;
   }
   
@@ -152,10 +159,6 @@ body {
   .mobile-menu a {
     padding: 0.5rem 0;
     font-size: 0.85rem;
-  }
-  
-  main {
-    /* margin-left: 12rem; */
   }
   
   .sidebar {
