@@ -23,6 +23,12 @@ body {
 .nav-rounded-all { border-radius: 18px; }
 .sticky-top{
   z-index: 1;
+  transition: transform 0.28s ease;
+  will-change: transform;
+}
+
+.sticky-top.nav-hidden {
+  transform: translateY(calc(-100% - 0.5rem));
 }
 .sidebar { 
   background-color: #fff; 
