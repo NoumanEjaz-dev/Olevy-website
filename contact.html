@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="./contact.css">
   </head>
   <body class="text-dark">
-    <header class="sticky-top mt-4 header-rounded px-2 px-md-4 py-2 py-md-3">
+    <header class="sticky-top mt-4 header-rounded px-2 px-md-4 py-2 py-md-3" id="contactHeader">
       <div class="container-fluid d-flex align-items-center justify-content-between gap-2 gap-md-4">
-        <a href="index.html" class="logo text-decoration-none" style="color:inherit">OLEVY</a>
+        <a href="index.html" class="logo text-decoration-none" style="color:inherit" aria-label="OLEVY home">
+          <img src="./img/logo-Olevy.png" alt="OLEVY logo" class="logo-img">
+        </a>
         <nav>
           <a href="#">Explore</a>
           <a href="#">Resources</a>
@@ -148,51 +150,76 @@
 
     <script src="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.js"></script>
     <script>
-      // ── Notification Popup: show once per session ──
+      // Hide header on scroll down, show on scroll up.
       (function () {
-        const modal    = document.getElementById('olevyModal');
+        const header = document.getElementById('contactHeader');
+        if (!header) return;
+
+        let lastScrollY = window.scrollY;
+        const minDelta = 5;
+
+        window.addEventListener('scroll', function () {
+          const currentScrollY = window.scrollY;
+
+          if (Math.abs(currentScrollY - lastScrollY) < minDelta) return;
+
+          if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            header.classList.add('nav-hidden');
+          } else {
+            header.classList.remove('nav-hidden');
+          }
+
+          lastScrollY = currentScrollY;
+        }, { passive: true });
+      })();
+
+      // Modal behavior (same pattern as main page)
+      (function () {
+        const modal = document.getElementById('olevyModal');
         const closeBtn = document.getElementById('modalClose');
-        const subBtn   = document.getElementById('modalSubscribe');
+        const subBtn = document.getElementById('modalSubscribe');
+
+        function showModal() {
+          if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }
+        }
 
         function closeModal() {
-          modal.style.display = 'none';
-          // Remember dismissal for this browser session
-          sessionStorage.setItem('olevyModalDismissed', 'true');
-        }
-
-        // Only show if NOT dismissed this session
-        if (!sessionStorage.getItem('olevyModalDismissed')) {
-          // Small delay so page loads first
-          setTimeout(function () {
-            modal.style.display = 'flex';
-          }, 1200);
-        }
-
-        // Close on × button
-        closeBtn.addEventListener('click', closeModal);
-
-        // Close on backdrop click
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal) closeModal();
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
-        });
-
-        // Subscribe button
-        subBtn.addEventListener('click', function () {
-          const email = document.getElementById('modalEmail').value.trim();
-          if (!email || !email.includes('@')) {
-            document.getElementById('modalEmail').style.borderColor = '#e53e3e';
-            return;
+          if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            localStorage.setItem('olevyModalDismissed', 'true');
           }
-          // Success state
-          subBtn.textContent = '✓ Subscribed!';
-          subBtn.style.background = '#22c55e';
-          setTimeout(closeModal, 1200);
-        });
+        }
+
+        const modalDismissed = localStorage.getItem('olevyModalDismissed');
+
+        if (!modalDismissed) {
+          window.addEventListener('load', function () { setTimeout(showModal, 450); });
+        }
+
+        if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+        if (subBtn) {
+          subBtn.addEventListener('click', function () {
+            const emailField = document.getElementById('modalEmail');
+            const email = emailField ? emailField.value.trim() : '';
+            if (email) {
+              subBtn.textContent = 'Thanks!';
+              setTimeout(closeModal, 800);
+            } else if (emailField) {
+              emailField.focus();
+            }
+          });
+        }
+
+        if (modal) {
+          modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+          });
+        }
       })();
     </script>
   </body>
