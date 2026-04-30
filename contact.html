@@ -32,26 +32,29 @@
         </div>
 
         <!-- Right Form -->
-        <div class="contact-right">
+        <form class="contact-right" id="contactForm" action="https://formsubmit.co/noumanejaz488@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - OLEVY">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="form-row">
             <div class="form-group">
-              <input type="text" class="form-input" placeholder="First Name *" required>
+              <input type="text" class="form-input" name="first_name" placeholder="First Name *" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" placeholder="Last Name *" required>
+              <input type="text" class="form-input" name="last_name" placeholder="Last Name *" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <input type="email" class="form-input" placeholder="Email *" required>
+              <input type="email" class="form-input" name="email" placeholder="Email *" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" placeholder="Organization">
+              <input type="text" class="form-input" name="organization" placeholder="Organization">
             </div>
           </div>
           <div class="form-row full">
             <div class="form-group">
-              <select class="form-select" required>
+              <select class="form-select" name="reason" required>
                 <option value="">Reason *</option>
                 <option value="general">General Inquiry</option>
                 <option value="support">Support</option>
@@ -62,15 +65,16 @@
           </div>
           <div class="form-row full">
             <div class="form-group">
-              <textarea class="form-input" placeholder="Message *" required></textarea>
+              <textarea class="form-input" name="message" placeholder="Message *" required></textarea>
             </div>
           </div>
-          <button class="btn-submit">Submit</button>
+          <button type="submit" class="btn-submit" id="contactSubmitBtn">Submit</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           <div class="form-note">
             By submitting, you agree to receive updates, insights and news from us. This site is protected by reCAPTCHA and the Google
             <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
           </div>
-        </div>
+        </form>
       </div>
 
       <!-- Image / CTA Section -->
@@ -171,6 +175,53 @@
 
           lastScrollY = currentScrollY;
         }, { passive: true });
+      })();
+
+      // Contact form submit without redirect
+      (function () {
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('contactSubmitBtn');
+        const statusEl = document.getElementById('formStatus');
+        if (!form || !submitBtn || !statusEl) return;
+
+        function setStatus(message, type) {
+          statusEl.textContent = message;
+          statusEl.className = 'form-status is-visible ' + (type === 'success' ? 'is-success' : 'is-error');
+        }
+
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const originalBtnLabel = submitBtn.textContent;
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+          statusEl.className = 'form-status';
+          statusEl.textContent = '';
+
+          try {
+            const formData = new FormData(form);
+            const payload = Object.fromEntries(formData.entries());
+
+            const response = await fetch('https://formsubmit.co/ajax/noumanejaz488@gmail.com', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) throw new Error('Request failed');
+
+            setStatus('Email has been sent successfully. We will contact you soon.', 'success');
+            form.reset();
+          } catch (error) {
+            setStatus('Could not send your email right now. Please try again in a moment.', 'error');
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnLabel;
+          }
+        });
       })();
 
       // Modal behavior (same pattern as main page)
