@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="./styles.css">
     
   </head>
-  <body class="text-dark">
-    <div class="top-banner d-flex align-items-center justify-content-between px-3">
+  <body>
+    <div class="top-banner d-flex align-items-center justify-content-between px-3 px-md-4">
       <div class="banner-text">🎉 New to Olevy? Explore how decentralized hiring and mentorship work together to help you source, verify, and grow Web3-ready talent. <a href="#" class="banner-link">Start here.</a></div>
     </div>
     <!-- Header -->
-    <header class="sticky-top mt-2 bg-black-custom text-white-custom px-2 px-md-4 py-2 py-md-3 nav-rounded-all">
-      <div class="container-fluid d-flex align-items-center justify-content-between gap-2 gap-md-4">
+    <header class="sticky-top mt-2 bg-black-custom text-white-custom px-2 px-md-3 py-2 nav-rounded-all">
+      <div class="container-fluid d-flex align-items-center justify-content-start gap-2 gap-md-3">
         <a href="#" id="brandToggle" class="d-flex align-items-center gap-2 text-decoration-none brand">
           <img src="./img/logo-Olevy.png" alt="OLEVY logo" class="brand-logo">
         </a>
@@ -26,13 +26,14 @@
         </button>
 
         <!-- Navigation Menu -->
-        <nav class="navbar-menu d-none d-md-flex align-items-center gap-4 flex-grow-1 justify-content-center">
+        <nav class="navbar-menu d-none d-md-flex align-items-center gap-3 justify-content-start">
           <a href="contact.html" class="text-decoration-none text-white">Get Started</a>
           <a href="#" class="text-decoration-none text-white">Students</a>
           <a href="#" class="text-decoration-none text-white">Employers</a>
         </nav>
 
         <div class="header-right d-none d-md-flex align-items-center gap-2 gap-md-3 ms-auto">
+          <button type="button" class="theme-toggle" id="themeToggleIndex" aria-label="Toggle light and dark mode">Dark mode</button>
           <a href="#" class="text-decoration-none text-white">Support</a>
           <div class="position-relative">
             <input type="text" class="form-control form-control-sm ps-3 " placeholder="Search" >
@@ -43,6 +44,7 @@
 
       <!-- Mobile Menu -->
       <nav class="mobile-menu d-md-none navbar-menu-mobile" id="mobileMenu" style="display: none;">
+        <button type="button" class="theme-toggle w-100 mb-2" id="themeToggleMobile" aria-label="Toggle light and dark mode">Dark mode</button>
         <a href="contact.html" class="text-decoration-none text-white d-block py-2">Get Started</a>
         <a href="#" class="text-decoration-none text-white d-block py-2">Students</a>
         <a href="#" class="text-decoration-none text-white d-block py-2">Employers</a>
@@ -183,53 +185,55 @@
     </script>
     </div>
 
+    <div class="footer-bridge" aria-hidden="true"></div>
+
     <!-- Footer -->
-    <footer class="border-top pt-4 pt-md-5 mt-auto" style="border-color:#ddd;">
-      <div class="container-lg px-3 px-md-4">
-        <div class="row g-3 g-md-5 mb-4 mb-md-5">
+    <footer class="site-footer mt-auto">
+      <div class="container-fluid footer-content-wrap px-3 px-md-4 px-lg-5">
+        <div class="row g-3 g-md-4 mb-4 mb-md-5 footer-columns">
           <div class="col-6 col-md-3">
-            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">ABOUT</h3>
+            <h3 class="footer-title">ABOUT</h3>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">ABOUT OLEVY</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">GET STARTED</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">DOCUMENTARY</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">RECRUITMENT LIFECYCLE</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">ABOUT OLEVY</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">GET STARTED</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">DOCUMENTARY</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">RECRUITMENT LIFECYCLE</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
-            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">EXPLORE</h3>
+            <h3 class="footer-title">EXPLORE</h3>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">BLOG</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">COMMUNITY FORUM</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">EVENTS</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">BLOG</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">COMMUNITY FORUM</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">EVENTS</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
-            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">EMERGENCY HIRE</h3>
+            <h3 class="footer-title">EMERGENCY HIRE</h3>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">GET ACCESS</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">COFFEE CHAT</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">GET ACCESS</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">COFFEE CHAT</a></li>
             </ul>
           </div>
           <div class="col-6 col-md-3">
-            <h3 class="fw-bold small text-uppercase mb-3" style="letter-spacing:.05em;">RESOURCES</h3>
+            <h3 class="footer-title">RESOURCES</h3>
             <ul class="list-unstyled mb-0">
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">HELP CENTER</a></li>
-              <li class="mb-2"><a href="#" class="text-decoration-none text-dark">BRAND ASSETS</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">HELP CENTER</a></li>
+              <li class="mb-2"><a href="#" class="text-decoration-none footer-link">BRAND ASSETS</a></li>
               <li class="mb-3 d-flex gap-2">
-                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-newspaper"></i></a>
-                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="text-decoration-none footer-link"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-decoration-none footer-link"><i class="bi bi-newspaper"></i></a>
+                <a href="#" class="text-decoration-none footer-link"><i class="bi bi-youtube"></i></a>
               </li>
               <li class="d-flex gap-2">
-                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-discord"></i></a>
-                <a href="#" class="text-decoration-none text-dark"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-decoration-none footer-link"><i class="bi bi-discord"></i></a>
+                <a href="#" class="text-decoration-none footer-link"><i class="bi bi-linkedin"></i></a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="border-top pt-3 pt-md-4" style="border-color:#ddd;">
-          <img src="./img/Footer-Img.png" alt="OLEVY" class="footer-logo-img">
+        <div class="pt-2 pt-md-3">
+          <img src="./img/Footer-Img-transparent.png" alt="OLEVY" class="footer-logo-img">
         </div>
       </div>
     </footer>
@@ -462,6 +466,34 @@
           }
         });
       });
+
+      // Theme toggles
+      (function () {
+        const root = document.documentElement;
+        const toggles = [
+          document.getElementById('themeToggleIndex'),
+          document.getElementById('themeToggleMobile')
+        ].filter(Boolean);
+        if (!toggles.length) return;
+
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          toggles.forEach(function (toggle) {
+            toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+          });
+        }
+
+        const savedTheme = localStorage.getItem('olevyTheme') || 'light';
+        applyTheme(savedTheme);
+
+        toggles.forEach(function (toggle) {
+          toggle.addEventListener('click', function () {
+            const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('olevyTheme', nextTheme);
+            applyTheme(nextTheme);
+          });
+        });
+      })();
 
       // Modal & banner behavior
       (function(){
