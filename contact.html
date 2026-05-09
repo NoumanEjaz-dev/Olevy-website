@@ -3,10 +3,59 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Olevy Contact</title>
+    <title>Hire Tech and GTM Talent Faster | Contact Olevy</title>
+    <meta name="description" content="Contact Olevy to build a faster, more structured hiring process. Get embedded recruiting support for technical and go-to-market roles." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://olevydocs.com/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Hire Tech and GTM Talent Faster | Contact Olevy" />
+    <meta property="og:description" content="Tell us what roles you are hiring for and get embedded recruiting support tailored to your team." />
+    <meta property="og:url" content="https://olevydocs.com/contact.html" />
+    <meta property="og:image" content="https://olevydocs.com/img/logo-Olevy.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hire Tech and GTM Talent Faster | Contact Olevy" />
+    <meta name="twitter:description" content="Embedded hiring operations for scaling organizations." />
+    <meta name="twitter:image" content="https://olevydocs.com/img/logo-Olevy.png" />
+    <meta name="theme-color" content="#0b1118" />
     <link href="./bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./contact.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://olevydocs.com/#organization",
+            "name": "Olevy",
+            "url": "https://olevydocs.com/",
+            "logo": "https://olevydocs.com/img/logo-Olevy.png"
+          },
+          {
+            "@type": "ContactPage",
+            "@id": "https://olevydocs.com/contact.html#webpage",
+            "url": "https://olevydocs.com/contact.html",
+            "name": "Contact Olevy",
+            "isPartOf": {
+              "@id": "https://olevydocs.com/#website"
+            },
+            "about": {
+              "@type": "Service",
+              "serviceType": "Embedded Hiring Operations"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://olevydocs.com/#website",
+            "url": "https://olevydocs.com/",
+            "name": "Olevy",
+            "publisher": {
+              "@id": "https://olevydocs.com/#organization"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="sticky-top mt-2 header-rounded px-2 px-md-3 py-2" id="contactHeader">
@@ -79,8 +128,8 @@
 
       <!-- Image / CTA Section -->
       <div class="image-section">
-        <a class="join-button" href="#" id="coffeeChatCta">Let's Talk Hiring</a>
-        <p class="join-slogan">Built for Speed</p>
+        <p class="join-slogan pb-2">Built for Speed</p>
+        <a class="join-button" href="#" id="coffeeChatCta">Let's Talk Hiring</a>       
       </div>
 
       <div class="footer-bridge" aria-hidden="true"></div>
@@ -131,7 +180,7 @@
             </div>
           </div>
           <div class="pt-2 pt-md-3">
-            <img src="./img/Footer-Img-transparent.png" alt="OLEVY" class="footer-logo-img">
+            <img src="./img/Footer-Img-transparent.png" alt="OLEVY" class="footer-logo-img" id="contactFooterLogo">
           </div>
         </div>
       </footer>
@@ -236,10 +285,19 @@
       (function () {
         const root = document.documentElement;
         const toggle = document.getElementById('themeToggleContact');
+        const footerLogo = document.getElementById('contactFooterLogo');
         if (!toggle) return;
+
+        const footerLogoSources = {
+          light: './img/Footer-Img-transparent.png',
+          dark: './img/white-olevy-trasprent.png'
+        };
 
         function applyTheme(theme) {
           root.setAttribute('data-theme', theme);
+          if (footerLogo) {
+            footerLogo.src = footerLogoSources[theme] || footerLogoSources.light;
+          }
           toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
         }
 
