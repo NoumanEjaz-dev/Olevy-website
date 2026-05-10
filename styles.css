@@ -11,6 +11,8 @@ html { overflow-x: hidden; max-width: 100%; }
   --header-text: #ffffff;
   --banner-bg: #a54bcc;
   --footer-bg: #f3f5f7;
+  --footer-bridge-top: #f3f5f7;
+  --footer-bridge-block: rgba(255, 255, 255, 0.48);
 }
 
 [data-theme='dark'] {
@@ -23,6 +25,8 @@ html { overflow-x: hidden; max-width: 100%; }
   --header-text: #f0f3f6;
   --banner-bg: #8e3eb0;
   --footer-bg: #15191d;
+  --footer-bridge-top: #15191d;
+  --footer-bridge-block: rgba(255, 255, 255, 0.06);
 }
 
 .footer-logo-img {
@@ -226,6 +230,59 @@ body {
   border-color: var(--line);
 }
 
+.section-nav {
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.section-nav-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.8rem 1.15rem;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.section-nav-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #a855f7;
+}
+
+.section-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.section-nav-btn-next {
+  margin-left: auto;
+}
+
+.section-nav-btn i {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 576px) {
+  .section-nav {
+    gap: 0.75rem !important;
+  }
+
+  .section-nav-btn {
+    min-width: 0;
+    flex: 1 1 50%;
+    padding: 0.72rem 0.95rem;
+    font-size: 0.88rem;
+  }
+}
+
 #modalEmail{
   border-radius: 0px;
   padding: 10px;
@@ -247,9 +304,65 @@ padding: 10px;
       .top-banner .banner-close{background:transparent;border:0;color:#fff;font-size:1.1rem;padding:.25rem .5rem}
 
       .footer-bridge {
-        height: 40px;
+        height: 96px;
         margin-top: 0;
-        background: linear-gradient(180deg, transparent 0%, var(--footer-bg) 100%);
+        position: relative;
+        overflow: hidden;
+        background: var(--footer-bg);
+      }
+
+      .footer-bridge::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 4% 60% / 42px 42px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 14% 22% / 84px 70px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 27% 8% / 78px 86px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 36% 42% / 180px 58px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 52% 18% / 108px 76px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 66% 58% / 70px 32px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 74% 16% / 132px 78px no-repeat,
+          linear-gradient(var(--footer-bridge-block), var(--footer-bridge-block)) 87% 10% / 110px 80px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 18% 18% / 28px 28px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 33% 18% / 24px 24px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 59% 20% / 22px 22px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 64% 20% / 22px 22px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 69% 20% / 22px 22px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 72% 44% / 30px 30px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 76% 44% / 30px 30px no-repeat,
+          radial-gradient(circle at 50% 50%, var(--footer-bridge-block) 0 72%, transparent 73%) 98% 58% / 54px 54px no-repeat;
+        opacity: 0.92;
+        animation: footerBridgeFloat 12s ease-in-out infinite alternate;
+      }
+
+      .footer-bridge::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 60%),
+          linear-gradient(110deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.22) 50%, rgba(255, 255, 255, 0) 60%);
+        background-size: 100% 100%, 240% 100%;
+        background-position: 0 0, 100% 0;
+        mix-blend-mode: soft-light;
+        animation: footerBridgeShimmer 8s linear infinite;
+      }
+
+      @keyframes footerBridgeFloat {
+        0% {
+          transform: translate3d(-0.8%, 0, 0);
+          opacity: 0.85;
+        }
+        100% {
+          transform: translate3d(0.8%, -2px, 0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes footerBridgeShimmer {
+        0% { background-position: 0 0, 120% 0; }
+        100% { background-position: 0 0, -120% 0; }
       }
 
       .site-footer {
@@ -265,7 +378,7 @@ padding: 10px;
         justify-content: flex-start;
         align-items: flex-start;
         row-gap: 2rem;
-        margin-bottom: 0 !important;
+        margin-bottom: 25px !important;
       }
 
       .footer-title {
@@ -336,7 +449,7 @@ padding: 10px;
         .nav-rounded-all { margin: 0 6px; }
         .navbar-menu { margin-left: 0; }
         .theme-toggle { padding: 6px 10px; font-size: 0.74rem; }
-        .footer-bridge { height: 24px; }
+        .footer-bridge { height: 72px; }
         .site-footer { padding: 2rem 0 1.4rem; }
         .footer-columns .col-6,
         .footer-columns .col-md-3 {
@@ -397,6 +510,13 @@ padding: 10px;
 
 [data-theme='dark'] .site-footer {
   background: var(--footer-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-bridge::before,
+  .footer-bridge::after {
+    animation: none;
+  }
 }
 
 [data-theme='dark'] .footer-bridge {
