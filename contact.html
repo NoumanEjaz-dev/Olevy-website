@@ -99,22 +99,51 @@
               <input type="email" class="form-input" name="email" placeholder="Work Email *" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-input" name="organization" placeholder="Company">
+              <input type="text" class="form-input" name="company_name" placeholder="Company Name *" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" class="form-input" name="hiring_contact" placeholder="Hiring Contact">
+            </div>
+            <div class="form-group">
+              <input type="url" class="form-input" name="organization_website" placeholder="Organization Website">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" class="form-input" name="role_titles" placeholder="Role Title(s) *" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-input" name="team_structure" placeholder="Team Structure">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" class="form-input" name="hiring_timeline" placeholder="Hiring Timeline">
+            </div>
+            <div class="form-group">
+              <select class="form-input" name="technical_gtm_focus">
+                <option value="" disabled selected>Technical or GTM Focus</option>
+                <option value="Technical">Technical</option>
+                <option value="GTM">GTM (Go-to-Market)</option>
+                <option value="Both">Both</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" class="form-input" name="expected_hiring_volume" placeholder="Expected Hiring Volume">
             </div>
           </div>
           <div class="form-row full">
             <div class="form-group">
-              <input type="text" class="form-input" name="hiring_role" placeholder="Role You're Hiring For *" required>
+              <textarea class="form-input" name="recruiting_challenges" placeholder="Current Recruiting Challenges"></textarea>
             </div>
           </div>
           <div class="form-row full">
             <div class="form-group">
-              <input type="text" class="form-input" name="role_open_duration" placeholder="How long has this role been open?">
-            </div>
-          </div>
-          <div class="form-row full">
-            <div class="form-group">
-              <textarea class="form-input" name="message" placeholder="Additional details" required></textarea>
+              <textarea class="form-input" name="additional_info" placeholder="Any additional information relevant to your hiring goals"></textarea>
             </div>
           </div>
           <button type="submit" class="btn-submit" id="contactSubmitBtn">Start Hiring Today</button>
@@ -334,9 +363,10 @@
 
         const modalDismissed = localStorage.getItem('olevyModalDismissed');
 
-        if (!modalDismissed) {
-          window.addEventListener('load', function () { setTimeout(showModal, 450); });
-        }
+        // Temporarily disabled: auto popup on refresh/page load.
+        // if (!modalDismissed) {
+        //   window.addEventListener('load', function () { setTimeout(showModal, 450); });
+        // }
 
         if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
